@@ -1,0 +1,136 @@
+﻿<Window x:Class="SchoolWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolWPF"
+        mc:Ignorable="d"
+        Background="#89E5FF"
+        Icon="Assets/Icons/school.ico" 
+        
+        Title="MySchool" Height="600" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4.5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0"  Background="#002B5B">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <Button Background="#F6FF00" 
+                        Margin="10" Height="35" 
+                        Content="Ustozlar"
+                        Foreground="Black"
+                        FontSize="15" 
+                        Click="Teacher_Click"/>
+                <Button Background="#F6FF00" 
+                        Margin="10" Height="35" 
+                        Content="O'quvchilar" 
+                        Foreground="Black"
+                        FontSize="15"
+                        Click="Pupil_Click"/>
+                <Button Background="#F6FF00" 
+                        Margin="10" Height="35" 
+                        Content="Sinflar" 
+                        Foreground="Black"
+                        FontSize="15"
+                        Click="Class_Click"/>
+                <Button Background="#F6FF00" 
+                        Margin="10" Height="35" 
+                        Content="Ishchilar" 
+                        Foreground="Black"
+                        FontSize="15"
+                        Click="Worker_Click"/>
+                <Button Background="#F6FF00" 
+                        Margin="10" Height="35" 
+                        Content="Vakantsiyalar"
+                        Foreground="Black"
+                        FontSize="15"
+                        Click="Vacation_Click"/>
+                <Button Background="#F6FF00" 
+                        Margin="10" Height="35" 
+                        Content="A'lochilarimiz" 
+                        Foreground="Black"
+                        FontSize="15"
+                        Click="PrideOfSchool_Click"/>
+                <Button Background="#F6FF00" 
+                        Margin="10" Height="35" 
+                        Content="Faxrli Ustozlar" 
+                        Foreground="Black"
+                        FontSize="15"
+                        Click="VeteranOfSchool_Click"/>
+                <Button Background="#F6FF00" 
+                        Margin="10" Height="35" 
+                        Content="Elektron ARM"
+                        Foreground="Black" 
+                        FontSize="15"
+                        Click="ElectronicLibrary_Click"/>
+
+            </StackPanel>
+            <Button Grid.Row="1" 
+                    Background="#73777B" 
+                    Margin="10" 
+                    Height="35" 
+                    Content="About" 
+                    Padding="15 0 15 5" 
+                    Foreground="White" 
+                    FontSize="15" 
+                    Click="Button_Click"/>
+        </Grid>
+
+        <Border Grid.Column="1" 
+                    Margin="10">
+            <Frame x:Name="FrPagesNavigation"
+                       NavigationUIVisibility="Hidden"
+                       >
+
+            </Frame>
+
+        </Border>
+
+        <Grid Grid.Column="2" 
+              Background="#205375">
+            <Button Background="#F66B0E" 
+                    VerticalAlignment="Top" 
+                    Margin="10" Height="35" 
+                    Content="Kirish" 
+                    Foreground="White" 
+                    FontSize="15"
+                    Click="Login_Click"/>
+            <StackPanel Grid.Row="1" 
+                        VerticalAlignment="Bottom" 
+                        HorizontalAlignment="Right" 
+                        Orientation="Vertical">
+                <Button Background="#533483" 
+                        Margin="5" 
+                        Height="30" 
+                        Content="Telegram" 
+                        Padding="25 5 25 5" 
+                        Foreground="Snow" 
+                        FontSize="13"
+                        Click="Telegram_Click"/>
+                <Button Background="#533483"
+                        Margin="5" 
+                        Height="30" 
+                        Content="Web Sayt" 
+                        Padding="25 5 25 5" 
+                        Foreground="Snow" 
+                        FontSize="13"
+                        Click="WebSite_Click"/>
+                <Button Background="#533483" 
+                        Margin="5" 
+                        Height="30" 
+                        Content="Instagram" 
+                        Padding="25 5 25 5" 
+                        Foreground="Snow" 
+                        FontSize="13"
+                        Click="Instagram_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

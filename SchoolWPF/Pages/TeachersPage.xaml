@@ -1,0 +1,109 @@
+﻿<Page x:Class="School.Desktop.Pages.TeachersPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:School.Desktop.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="450" 
+      d:DesignWidth="800"
+      Title="TeachersPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Margin="100 3 12 3"
+                         Padding="6"
+                         HorizontalAlignment="Right"
+                         Width="600"
+                         />
+                <Button Content="Create"
+                        Padding="3"
+                        Margin="3 3 3 3"
+                        Width="80"
+                        HorizontalAlignment="Right"
+                        Background="Green"
+                        Click="Create_Click"
+                        />
+            </StackPanel>
+        </Grid>
+        
+        <DataGrid Grid.Row="1"
+                  Name="dgData"
+                  FontSize="13"
+                  Background="SkyBlue"
+                  AutoGenerateColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserResizeRows="False"
+                  IsReadOnly="True"
+                  Loaded="DataGrid_Loaded"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id"
+                                    Width="50"
+                                    Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="First Name"
+                                    Width="3.5*"
+                                    Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Last Name"
+                                    Width="3.5*"
+                                    Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Phone number"
+                                    Width="4*"
+                                    Binding="{Binding PhoneNumber}"/>
+                <DataGridTextColumn Header="Salary"
+                                    Width="3.2*"
+                                    Binding="{Binding Salary}"/>
+                <DataGridTextColumn Header="Gender"
+                                    Width="2.5*"
+                                    Binding="{Binding Gender}"/>
+                <DataGridTextColumn Header="Created Date"
+                                    Width="3*"
+                                    Binding="{Binding CreatedDate}"/>
+                <DataGridTemplateColumn Header="Action"
+                                        Width="105"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                        >
+                                <Button
+                                    Width="35"
+                                    Background="#318CE7"
+                                    BorderThickness="0"
+                                    Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                    ToolTip="Update"
+                                    Click="Update_Click"
+                                    >
+                                    <materialDesign:PackIcon Foreground="White"
+                                                             Margin="-6"
+                                                             Kind="Pencil"/>
+                                </Button>
+                                <Button
+                                    Margin="2 0 0 0"
+                                    Width="35"
+                                    BorderThickness="0"
+                                    Background="#DE665D"
+                                    Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                    ToolTip="Delete"
+                                    Click="Delete_Click">
+                                    <materialDesign:PackIcon Foreground="White"
+                                                             Margin="-6"
+                                                             Kind="Delete"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        
+    </Grid>
+</Page>
