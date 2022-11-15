@@ -74,7 +74,8 @@
                     Margin="10"
                     Height="40"
                     Width="150"
-                    Background="#00FFA9" Click="Save_Click"
+                    Background="#00FFA9" 
+                    Click="Save_Click"
                 />
         </StackPanel>
     </Grid>
